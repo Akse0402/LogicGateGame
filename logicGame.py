@@ -44,7 +44,7 @@ if gameType == 1:
     i = 0
     while len(tableAnswer) < tableLenght:
         try:
-            tableAns = int(input(f"Angiv OR operation for {table[i]} - "
+            tableAns = int(input(f"Angiv {gameMode} operation for {table[i]} - "
                                  f"{tableGate[i]}: "))
             if 0 <= tableAns <= 1:
                 tableAnswer.append(tableAns)
@@ -63,7 +63,7 @@ if gameType == 2:
     i = 0
     while len(tableAnswer) < tableLenght:
         try:
-            tableAns = int(input(f"Angiv OR operation for {table[i]} - "
+            tableAns = int(input(f"Angiv {gameMode} operation for {table[i]} - "
                                  f"{tableGate[i]}: "))
             if 0 <= tableAns <= 1:
                 tableAnswer.append(tableAns)
@@ -82,7 +82,7 @@ if gameType == 3:
     i = 0
     while len(tableAnswer) < tableLenght:
         try:
-            tableAns = int(input(f"Angiv OR operation for {table[i]} - "
+            tableAns = int(input(f"Angiv {gameMode} operation for {table[i]} - "
                                  f"{tableGate[i]}: "))
             if 0 <= tableAns <= 1:
                 tableAnswer.append(tableAns)
@@ -101,7 +101,7 @@ if gameType == 4:
     i = 0
     while len(tableAnswer) < tableLenght:
         try:
-            tableAns = int(input(f"Angiv OR operation for {table[i]} - "
+            tableAns = int(input(f"Angiv {gameMode} operation for {table[i]} - "
                                  f"{tableGate[i]}: "))
             if 0 <= tableAns <= 1:
                 tableAnswer.append(tableAns)
