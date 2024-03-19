@@ -6,17 +6,10 @@ from time import sleep
 # Logic gates: NOT, AND, OR, NAND, NOR, XOR, XNOR
 # TODO: Fix print statements
 # TODO: Lav det i Pygame - Gør først dette når spillet er lavet her
+# TODO: Inkluder resterende logic gates
 
 
 class LogicGame:
-    # Settings
-    tableLenght = 5
-    table = []
-    tableGate = []
-    tableAnswer = []
-    tableCAnswer = []
-    gameModes = ["OR", "XOR", "AND", "NOT"]
-    gameMode = ""
 
     def __init__(self, tableLenght, table, tableGate, tableAnswer,
                  tableCAnswer, gameModes, gameMode):
@@ -28,13 +21,13 @@ class LogicGame:
         self.gameModes = gameModes
         self.gameMode = gameMode
 
-    def startGame(self, tableLenght, table, tableGate, gameModes, gameMode):
+    def startGame(self):
         print("Velkommen til Logic Gate Game!\n")
         while True:
             try:
                 gameType = int(input("Vælg dit gamemode - (1:Or) (2:Xor) (3:And) (4:Nand): "))
                 if 1 <= gameType <= 4:
-                    gameMode = gameModes[gameType - 1]
+                    gameMode = self.gameModes[gameType - 1]
                     print(f"Du valgte nr. {gameType} gamemode: {gameMode}\n")
                     sleep(0.5)
                     break
@@ -42,11 +35,11 @@ class LogicGame:
                 print("Du skal vælge et tal mellem 1-4")
 
         # Generer tal til Tables
-        for _ in range(tableLenght):
-            table.append(random.randint(0, 2))
-        for _ in range(tableLenght):
-            tableGate.append(random.randint(0, 2))
-        LogicGame.Game(gameType)
+        for _ in range(self.tableLenght):
+            self.table.append(random.randint(0, 2))
+        for _ in range(self.tableLenght):
+            self.tableGate.append(random.randint(0, 2))
+        LogicGame.Game(self, gameType)
 
     def Game(self, gameType):
         # OR gamemode
@@ -139,5 +132,16 @@ class LogicGame:
             print("Rigtige svar:", tableCAnswer)
 
 
-# if main = main:
-LogicGame.startGame()
+if __name__ == "__main__":
+    # Settings
+    startUp = LogicGame(
+        tableLenght=5,
+        table=[],
+        tableGate=[],
+        tableAnswer=[],
+        tableCAnswer=[],
+        gameModes=["OR", "XOR", "AND", "NOT"],
+        gameMode=""
+    )
+
+    startUp.startGame()
