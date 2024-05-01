@@ -140,7 +140,7 @@ if __name__ == "__main__":
         tableGate=[],
         tableAnswer=[],
         tableCAnswer=[],
-        gameModes=["OR", "XOR", "AND", "NOT"],
+        gameModes=["OR", "XOR", "AND", "NAND"],
         gameMode=""
     )
 
